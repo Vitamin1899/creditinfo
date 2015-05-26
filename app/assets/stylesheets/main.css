@@ -1,0 +1,75 @@
+html,
+body {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+   width: 100%;
+   text-align: center;
+   color: #fff;
+}
+
+.container {
+   min-height: 100%;
+   width: 100%;
+   position: relative;
+
+}
+
+header {
+   height: 50px;
+   text-align: center;
+   background-color: #333333;
+   color: #FFFFFF;
+}
+
+.body {
+   height: 100%;
+}
+
+.footer {
+   height: 25px;
+   text-align: center;
+   color: #FFFFFF;
+   background-color: #292929;
+   width: 1335px;
+   position: absolute;
+   bottom: 0;
+}
+
+ul.undotted-list {
+  list-style-type: none;
+
+  li {
+    display: inline;
+  }
+
+  a {
+    color: #FFFFFF;
+
+    &:hover {
+      font-weight: bold;
+   }
+  }
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.left {
+  float: left;
+  width: 50%;
+ }
+
+.right {
+  float: right;
+  width: 50%;
+ }
+
+h1 {
+  text-align: center;
+}
+.center {
+   height: 580px;
+   background-image:url(money.png);
+}

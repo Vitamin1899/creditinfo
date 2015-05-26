@@ -7,8 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <%= render 'shared/header_menu' %>
+    </header>
 
-<%= yield %>
+    <div class='body'>
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+      <%= yield %>
+    </div>
 
+    <footer class='footer'>
+      <%= render 'shared/footer' %>
+    </footer>
+  </div>
 </body>
 </html>

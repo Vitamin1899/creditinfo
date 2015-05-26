@@ -43,3 +43,10 @@ group :development, :test do
   gem 'spring'
 end
 
+# Device authentication
+gem 'devise'
+gem 'activeadmin', :github => 'gregbell/active_admin'
+
+# Bootstrap integration
+gem 'bootstrap-sass', '~> 3.3.3'
+
