@@ -1,6 +1,13 @@
-<h3> Email: <%= @user.email %> </h3>
+<h4> Email: <%= @user.email %> </h4>
+<h4> Доход: <%= @user.profit %> бел.руб. </h4>
 <h4> Процент кредита для Вас составляет: </h4>
-<h1> 40% </h1>
+<h1> <%= @user.percentage_credit %>% </h1>
+  <% if current_user.credit == nil %>
+    <h4> <%= link_to 'Создать кредит', new_credit_path %> </h4>
+  <% else %>
+    <h4><%= link_to "Посмотреть кредит", current_user.credit %></h4>
 
+  <% end %>
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', home_index_path %>
+

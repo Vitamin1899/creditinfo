@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :sum %><br>
-    <%= f.number_field :sum %>
+    <%= f.label :sum, 'Сумма' %><br>
+    <%= f.number_field :sum, placeholder: 'в белорусских рублях' %>
   </div>
   <div class="field">
-    <%= f.label :period %><br>
-    <%= f.number_field :period %>
+    <%= f.label :period, 'Период' %><br>
+    <%= f.number_field :period, placeholder: 'количество месяцев' %>
   </div>
   <div class="actions">
     <%= f.submit %>

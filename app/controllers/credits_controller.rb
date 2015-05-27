@@ -24,7 +24,7 @@ class CreditsController < ApplicationController
   # POST /credits
   # POST /credits.json
   def create
-    @credit = Credit.new(credit_params)
+    @credit = Credit.new(credit_params.merge({ user_id: current_user.id }))
 
     respond_to do |format|
       if @credit.save
@@ -41,7 +41,7 @@ class CreditsController < ApplicationController
   # PATCH/PUT /credits/1.json
   def update
     respond_to do |format|
-      if @credit.update(credit_params)
+      if @credit.update(credit_params.merge({ user_id: current_user.id }))
         format.html { redirect_to @credit, notice: 'Credit was successfully updated.' }
         format.json { render :show, status: :ok, location: @credit }
       else
@@ -69,6 +69,6 @@ class CreditsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def credit_params
-      params.require(:credit).permit(:sum, :period)
+      params.require(:credit).permit(:sum, :period, :user_id)
     end
 end

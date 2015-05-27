@@ -1,14 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Sum:</strong>
-  <%= @credit.sum %>
-</p>
-
-<p>
-  <strong>Period:</strong>
-  <%= @credit.period %>
-</p>
+<h5><u> Запрашиваемый кредит </u></h5>
+<h4> Сумма: <b><%= @credit.sum %></b> б.р. </h4>
+<h4> Период: <b><%= @credit.period %></b> мес. </h4>
+<h4> Статус: <%= @credit.status %> </h4>
+<h4><%= link_to 'График платежей' if current_user.credit.status == "approved" %></h4>
 
 <%= link_to 'Edit', edit_credit_path(@credit) %> |
-<%= link_to 'Back', credits_path %>
+<%= link_to 'Back', current_user %>

@@ -18,14 +18,6 @@
         <td><%=  %></td>
         <td><%= credit.sum %></td>
         <td><%= credit.period %></td>
-        <td><%= link_to 'Show', credit %></td>
-        <td><%= link_to 'Edit', edit_credit_path(credit) %></td>
-        <td><%= link_to 'Destroy', credit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+      <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Credit', new_credit_path %>

@@ -1,17 +1,31 @@
 ActiveAdmin.register Credit do
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
+  permit_params :email, :sum, :period, :status
+  index do
+    selectable_column
+    column :email do |credit|
+      credit.user
+    end
+    column :sum
+    column :period
+    column :created_at
+    column :updated_at
+    column :status
+    actions
+  end
 
+  filter :email
+  filter :sum
+  filter :period
+  filter :status
+
+  form do |f|
+    f.inputs "Admin Details" do
+      f.input :sum
+      f.input :period
+      f.input :status, :label => "Status", :as => :select, :collection => ["pending", "approved"]
+    end
+    f.actions
+  end
 
 end
