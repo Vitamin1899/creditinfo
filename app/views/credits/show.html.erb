@@ -2,7 +2,23 @@
 <h4> Сумма: <b><%= @credit.sum %></b> б.р. </h4>
 <h4> Период: <b><%= @credit.period %></b> мес. </h4>
 <h4> Статус: <%= @credit.status %> </h4>
-<h4><%= link_to 'График платежей' if current_user.credit.status == "approved" %></h4>
 
-<%= link_to 'Edit', edit_credit_path(@credit) %> |
+<% if current_user.credit.status == "approved" %>
+  <h4 style="color: green" ><u> График платежей <u></h4>
+  <table>
+    <tr>
+      <th>Дата</th>
+      <th>Сумма</th>
+    </tr>
+    <% @credit.period.times do |x| %>
+      <% x += 1 %>
+      <% @credit.assign_attributes(:updated_at => x.month.since) %>
+      <tr>
+        <td><%= @credit.updated_at.strftime("%B %e, %Y") %></td>
+        <td><%= ( @credit.sum * (1 + @credit.user.percentage_credit * 0.01) / @credit.period ).to_i %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
 <%= link_to 'Back', current_user %>

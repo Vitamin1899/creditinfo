@@ -4,7 +4,7 @@ ActiveAdmin.register Credit do
   index do
     selectable_column
     column :email do |credit|
-      credit.user
+      credit.user.email
     end
     column :sum
     column :period

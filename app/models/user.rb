@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  HIGH_PER = 30
+  LOW_PER = 20
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -9,7 +11,7 @@ class User < ActiveRecord::Base
   validates :profit, numericality: { only_integer: true }, allow_blank: false
 
   def percentage_credit
-    Random.new.rand(20..40)
+    profit > 10**7 ? LOW_PER : HIGH_PER
   end
 
 end
