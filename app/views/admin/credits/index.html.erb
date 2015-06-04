@@ -20,7 +20,7 @@
         <td><%= admin_credit.status %></td>
         <td><%= link_to 'Show', admin_credit %></td>
         <td><%= link_to 'Edit', edit_admin_credit_path(admin_credit) %></td>
-        <td><%= link_to 'Destroy', admin_credit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', admin_credit_path(admin_credit), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
