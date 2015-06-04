@@ -34,8 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'debugger' anywhere in the code to stop execution and get a debugger console
-  gem 'debugger'
+  gem 'pry-debugger'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -48,7 +47,6 @@ end
 
 # Device authentication
 gem 'devise'
-gem 'activeadmin', github: 'gregbell/active_admin'
 
 # Bootstrap integration
 gem 'bootstrap-sass', '~> 3.3.3'

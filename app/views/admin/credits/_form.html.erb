@@ -1,0 +1,30 @@
+<%= form_for(@admin_credit, url: path, method: method) do |f| %>
+  <% if @admin_credit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_credit.errors.count, "error") %> prohibited this admin_credit from being saved:</h2>
+
+      <ul>
+      <% @admin_credit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sum, 'Сумма' %><br>
+    <%= f.number_field :sum, placeholder: 'в белорусских рублях' %>
+  </div>
+  <div class="field">
+    <%= f.label :period, 'Период' %><br>
+    <%= f.number_field :period, placeholder: 'количество месяцев' %>
+  </div>
+  <div class="field">
+    <%= f.label :status, 'Статус' %><br>
+    <%= f.select :status, ['pending', 'approved'] %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

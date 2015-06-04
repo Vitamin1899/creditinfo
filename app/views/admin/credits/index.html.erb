@@ -1,0 +1,27 @@
+<h1>Credits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Sum</th>
+      <th>Period</th>
+      <th>Status</th>
+      <th colspan="3"> Manage </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_credits.each do |admin_credit| %>
+      <tr>
+        <td><%= admin_credit.user.email %></td>
+        <td><%= admin_credit.sum %></td>
+        <td><%= admin_credit.period %></td>
+        <td><%= admin_credit.status %></td>
+        <td><%= link_to 'Show', admin_credit %></td>
+        <td><%= link_to 'Edit', edit_admin_credit_path(admin_credit) %></td>
+        <td><%= link_to 'Destroy', admin_credit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

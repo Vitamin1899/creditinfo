@@ -5,7 +5,14 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to "My profile", current_user if user_signed_in? %> </li>
+        <% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <li><%= link_to "Clients", admin_users_path %></li>
+            <li><%= link_to "Credits", admin_credits_path %></li>
+          <% else %>
+            <li><%= link_to "My profile", current_user if user_signed_in? %> </li>
+          <% end %>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>

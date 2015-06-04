@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>All credits</h1>
+<h1>Credits</h1>
 
 <table>
   <thead>
@@ -8,16 +6,19 @@
       <th>Email</th>
       <th>Sum</th>
       <th>Period</th>
-      <th colspan="3"></th>
+      <th>Status</th>
     </tr>
   </thead>
 
   <tbody>
     <% @credits.each do |credit| %>
       <tr>
-        <td><%=  %></td>
+        <td><%= credit.user.email %></td>
         <td><%= credit.sum %></td>
         <td><%= credit.period %></td>
+        <!-- <td><%#= select_tag :status, options_for_select(["pending","approved"]) %></td> -->
+        <td><%= credit.status %></td>
+        <% end %>
       <% end %>
   </tbody>
 </table>

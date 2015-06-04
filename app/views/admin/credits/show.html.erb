@@ -1,0 +1,6 @@
+<h4> Сумма: <b><%= @admin_credit.sum %></b> б.р. </h4>
+<h4> Период: <b><%= @admin_credit.period %></b> мес. </h4>
+<h4> Статус: <%= @admin_credit.status %> </h4>
+
+<%= link_to 'Edit', edit_admin_credit_path(@admin_credit) %> |
+<%= link_to 'Back', admin_credits_path %>

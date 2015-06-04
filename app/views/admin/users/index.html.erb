@@ -1,0 +1,23 @@
+<h1>Clients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Profit</th>
+      <th colspan="3"> Manage </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_users.each do |admin_user| %>
+      <tr>
+        <td><%= admin_user.email %></td>
+        <td><%= admin_user.profit %></td>
+        <td><%= link_to 'Show', admin_user %></td>
+        <td><%= link_to 'Edit', edit_admin_user_path(admin_user) %></td>
+        <td><%= link_to 'Destroy', admin_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
